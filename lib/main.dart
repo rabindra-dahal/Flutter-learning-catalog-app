@@ -9,12 +9,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final double pi = 3.14;
-  final bool isMale = true;
-  final num temperature = 30.5;//takes both integer and double
-  var day = "Sunday"; //compile at runtime and resolve type
-  static const  gravity = 9.8; //constant like universal constants
-
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +23,8 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
           brightness: Brightness.dark,
       ),
-      initialRoute: "/",
+      debugShowCheckedModeBanner: false,
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         "/": (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
