@@ -10,6 +10,12 @@ class HomePage extends StatelessWidget {
         title: Center(
           child: Text("Catalog App"),
         ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: ()=>{
+            Navigator.pop(context,false)
+          },
+        ),
       ),
       body: Center(
         child: Container(
