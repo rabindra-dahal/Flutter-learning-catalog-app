@@ -26,14 +26,13 @@ class HomeDetailPage extends StatelessWidget {
                   backgroundColor: MaterialStateProperty.all(MyTheme.darkBluishColor),
                   shape: MaterialStateProperty.all(StadiumBorder()),
                 ),
-                child: "Buy".text.make()
-            ).wh(100,50),
+                child: "Add to cart".text.make()
+            ).wh(120,50),
           ],
-        ).py32(),
+        ).p32(),
       ),
       appBar: AppBar(
-
-
+        backgroundColor: Colors.transparent,
       ),
       body: SafeArea(
         bottom: false,
@@ -55,6 +54,13 @@ class HomeDetailPage extends StatelessWidget {
                     catalog.name.text.xl4.color(MyTheme.darkBluishColor).bold.make(),
                     catalog.desc.text.xl.make(),
                     10.heightBox,
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                          "According to the Chinese Center for Disease Control ",
+                          overflow: TextOverflow.ellipsis,
+                      ),
+                    )
                   ],
 
                 ).py64(),
