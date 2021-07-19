@@ -35,13 +35,8 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         title: Text("Login"),
         centerTitle: true,
-        elevation: 2.0,
-        // leading: IconButton(
-        //   icon: Icon(Icons.arrow_back),
-        //   onPressed: ()=>{
-        //     Navigator.pop(context,false)
-        //   },
-        // ),
+        elevation: 0.0,
+
       ),
         body: Material(
           color: context.theme.canvasColor,
