@@ -36,12 +36,12 @@ class _LoginPageState extends State<LoginPage> {
         title: Text("Login"),
         centerTitle: true,
         elevation: 2.0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: ()=>{
-            Navigator.pop(context,false)
-          },
-        ),
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back),
+        //   onPressed: ()=>{
+        //     Navigator.pop(context,false)
+        //   },
+        // ),
       ),
         body: Material(
           color: context.theme.canvasColor,
