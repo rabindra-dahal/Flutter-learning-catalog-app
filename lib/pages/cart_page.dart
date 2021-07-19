@@ -40,7 +40,7 @@ class _CartTotal extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          VxConsumer(builder: (context,store,status) => "\$${_cart.totalPrice}".text.xl5.color(context.theme.accentColor).make(), mutations: {RemoveMutation}, notifications: {}),
+          VxBuilder(builder: (context,store,status) => "\$${_cart.totalPrice}".text.xl5.color(context.theme.accentColor).make(), mutations: {RemoveMutation},),
           30.widthBox,
           ElevatedButton(
               onPressed: (){
