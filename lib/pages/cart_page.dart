@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:learning_basics/core/store.dart';
 import 'package:learning_basics/models/cart.dart';
-import 'package:learning_basics/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CartPage extends StatelessWidget {
@@ -41,7 +40,7 @@ class _CartTotal extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$${_cart.totalPrice}".text.xl5.color(context.theme.accentColor).make(),
+          VxConsumer(builder: (context,store,status) => "\$${_cart.totalPrice}".text.xl5.color(context.theme.accentColor).make(), mutations: {RemoveMutation}, notifications: {}),
           30.widthBox,
           ElevatedButton(
               onPressed: (){
@@ -66,6 +65,7 @@ class _CartTotal extends StatelessWidget {
 class _CartList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    VxState.watch(context, on: [RemoveMutation]);
     final CartModel _cart = (VxState.store as MyStore).cart;
     return _cart.items.isEmpty ? "Nothing to display".text.makeCentered() : ListView.builder(
       itemBuilder: (context,index) => ListTile(
@@ -73,7 +73,7 @@ class _CartList extends StatelessWidget {
         trailing: IconButton(
             icon: Icon(Icons.remove_circle_outline),
             onPressed: (){
-              _cart.remove(_cart.items[index]);
+              RemoveMutation(_cart.items[index]);
 
             },
         ),
